@@ -15,3 +15,14 @@ class Config:
     )
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    import os
+
+    basedir = os.path.abspath(os.path.dirname(__file__))
+
+    SQLALCHEMY_ENGINE_OPTIONS = {
+        "connect_args": {
+            "ssl": {
+                "ca": os.path.join(basedir, "ca.pem")
+            }
+        }
+    }
