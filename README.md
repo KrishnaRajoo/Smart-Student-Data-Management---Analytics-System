@@ -4,9 +4,7 @@ A full-stack Student Analytics System developed using **Flask**, **MySQL**, and 
 
 ## 🌐 Live Demo
 
-🔗 **Live Application:** https://YOUR-RENDER-URL.onrender.com
-
-> Replace the above URL with your Render deployment link.
+🔗 **Live Application:** [https://smart-student-data-management-and.onrender.com]
 
 ---
 
