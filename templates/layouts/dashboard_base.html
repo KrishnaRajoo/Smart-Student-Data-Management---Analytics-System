@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+{% block extra_css %}
+
+{% endblock %}
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-chart-simple"></i>
+
+            <span>SSAP</span>
+
+        </div>
+
+        <ul class="sidebar-menu">
+
+            {% block sidebar %}
+
+            {% endblock %}
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Top Navbar -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <h2>{% block page_title %}{% endblock %}</h2>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <i class="fa-solid fa-bell"></i>
+
+                <div class="profile">
+
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span>{{ session.get('username', 'Guest') }}</span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <section class="content">
+
+            {% block content %}
+
+            {% endblock %}
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+{% block extra_js %}
+
+{% endblock %}
+
+</body>
+
+</html>
