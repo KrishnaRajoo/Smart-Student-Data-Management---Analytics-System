@@ -49,3 +49,62 @@ section{
     margin:auto;
 
 }
+
+/* =========================
+   Loader
+========================= */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#0f172a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    transition:.6s ease;
+}
+
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-box{
+    text-align:center;
+}
+
+.loader-logo{
+    width:220px;
+    border-radius:18px;
+    box-shadow:0 0 35px rgba(59,130,246,.35);
+}
+
+.loader-box h2{
+    margin-top:20px;
+    color:#fff;
+    font-size:28px;
+}
+
+.progress-container{
+    width:320px;
+    height:12px;
+    margin:30px auto 15px;
+    border-radius:50px;
+    background:#1e293b;
+    overflow:hidden;
+}
+
+#progressBar{
+    width:0%;
+    height:100%;
+    border-radius:50px;
+    background:linear-gradient(90deg,#3b82f6,#06b6d4);
+    transition:width .08s linear;
+}
+
+#progressText{
+    color:#fff;
+    font-size:22px;
+    font-weight:700;
+}
