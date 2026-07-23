@@ -5,6 +5,28 @@ Smart Student Analytics System
 {% endblock %}
 
 {% block content %}
+<div id="loader">
+
+    <div class="loader-box">
+
+        <img
+            src="{{ url_for('static', filename='images/logo.png') }}"
+            class="loader-logo"
+            alt="Logo">
+
+        <h2>Student Analytics System</h2>
+
+        <div class="progress-container">
+
+            <div id="progressBar"></div>
+
+        </div>
+
+        <h3 id="progressText">0%</h3>
+
+    </div>
+
+</div>
 
 <nav class="navbar">
 
@@ -470,5 +492,37 @@ Learn More
     </div>
 
 </section>
+
+<script>
+
+let progress = 0;
+
+const text = document.getElementById("progressText");
+const bar = document.getElementById("progressBar");
+const loader = document.getElementById("loader");
+
+const interval = setInterval(() => {
+
+    progress++;
+
+    text.innerHTML = progress + "%";
+
+    bar.style.width = progress + "%";
+
+    if(progress >= 100){
+
+        clearInterval(interval);
+
+        setTimeout(() => {
+
+            loader.classList.add("hide");
+
+        },300);
+
+    }
+
+},20);
+
+</script>
 
 {% endblock %}
